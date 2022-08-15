@@ -1,0 +1,78 @@
+package kristhel;
+
+import javax.swing.JOptionPane;
+
+public class simon {
+static String name;
+static String oneside,width,lenght;
+static int circle,square;
+static int rectanglel,rectanglew;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		name= JOptionPane.showInputDialog("Name:");
+		welcome(name);
+		
+		String[]shapes = {"square","circle","rectangle","exit"};
+		String choice=(String)JOptionPane.showInputDialog(null,"Choose your shape", "Calculate Perimeter",
+				JOptionPane.QUESTION_MESSAGE,null,shapes,shapes[1]);
+		
+		switch(choice){
+			case "square": 
+				oneside =JOptionPane.showInputDialog("One Side Value:");
+				square = Integer.parseInt(oneside);
+				JOptionPane.showMessageDialog(null, "The value of square is "+square(square));
+
+		    break;
+			case "circle":
+				JOptionPane.showInputDialog("Radius:",oneside);
+				circle = Integer.parseInt(oneside);
+
+				JOptionPane.showMessageDialog(null, "The value of circle is "+circle(circle));
+
+				
+				break;
+			case "rectangle":
+				JOptionPane.showInputDialog("lenght:",lenght);
+				JOptionPane.showInputDialog("width:",width);
+
+				rectanglel = Integer.parseInt(lenght);
+				rectanglew = Integer.parseInt(width);
+				rectangle(rectanglel,rectanglew);
+
+				break;
+			case "exit":
+				
+				return;
+			default:
+				
+				
+		}
+			
+
+	}
+	public static void welcome(String name) {
+		
+		JOptionPane.showMessageDialog(null, "welcome"+name);
+		
+	}
+	static int square(int v) {
+		
+		 int vv= v*4;
+		return vv;
+		
+	}
+	static double circle(double v) {
+       double vv = 2 * Math.PI * v;
+
+		return vv;
+		
+	}
+	static int rectangle(int rectanglel2, int rectanglew2) {
+		int v = rectanglel2*rectanglew2;
+		JOptionPane.showMessageDialog(null, "The value of square is "+v);
+		return v;
+
+	}
+
+}
